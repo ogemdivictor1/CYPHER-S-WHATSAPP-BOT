@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cypher WhatsApp Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #bot-image {
+            width: 150px;
+            margin: 20px 0;
+        }
+
+        #qrcode {
+            margin: 20px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .status-online {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome to Cypher WhatsApp Bot 🤖</h1>
+        <img id="bot-image" src="https://cdn-icons-png.flaticon.com/512/4712/4712025.png" alt="Robot Image">
+        <p>Status: <span id="status" class="status-online">Online</span></p>
+
+        <h2>Scan QR Code to Connect</h2>
+        <canvas id="qrcode"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script>
+        // Example QR code (replace with your bot QR dynamically later)
+        QRCode.toCanvas(document.getElementById('qrcode'), 'Your QR Code Here', function (error) {
+            if (error) console.error(error)
+            console.log('QR code generated!')
+        });
+    </script>
+</body>
+</html>
