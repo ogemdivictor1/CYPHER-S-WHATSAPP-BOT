@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: whatsapp-session-gen
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        value: false
+    healthCheckPath: /
+    autoDeploy: true
