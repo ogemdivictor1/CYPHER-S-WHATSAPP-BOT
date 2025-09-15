@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Cypher WhatsApp Bot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        #bot-image {
-            width: 150px;
-            margin: 20px 0;
-        }
-
-        #qrcode {
-            margin: 20px 0;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Session Generator</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cypher WhatsApp Session ID Generator</h1>
+    <p>Enter your phone number in international format (e.g., 12025550108). On your WhatsApp app: Settings > Linked Devices > Link with Phone Number, then enter the pairing code.</p>
+    
+    <form id="pairForm">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" placeholder="e.g., 12025550108" required>
+      <button type="submit">Generate Pairing Code</button>
+    </form>
+    
+    <button id="getSession">View Session Data</button>
+    
+    <div id="status"></div>
+  </div>
+  <script src="/script.js"></script>
+</body>
+</html>            padding: 30px;
             border-radius: 15px;
             box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
             text-align: center;
